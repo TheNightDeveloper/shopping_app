@@ -1,0 +1,43 @@
+name: shopping_app
+description: an online shop application
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_bloc:
+  flutter_screenutil: ^5.9.0
+  dots_indicator:
+  intl: ^0.18.1
+  cloud_firestore: ^4.12.0
+  firebase_auth:
+  firebase_core:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - img/
+    - icons/
+    - voice/
+    #   - images/a_dot_ham.jpeg
+
+
+  fonts:
+    - family: yekan
+      fonts:
+        - asset: fonts/B Yekan_YasDL.com.ttf
