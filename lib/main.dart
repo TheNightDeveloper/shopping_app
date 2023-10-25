@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => WelcomeBloc()),
+          BlocProvider(
+            create: (context) => WelcomeBloc(),
+            lazy: false,
+          ),
           BlocProvider(create: (context) => AuthBloc())
         ],
         child: ScreenUtilInit(
