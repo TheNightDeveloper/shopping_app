@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../constant/const.dart';
 
-AppBar buildAppbar() {
+AppBar buildAppbar(String title) {
   return AppBar(
     bottom: PreferredSize(
         preferredSize: const Size.fromHeight(1),
@@ -14,7 +14,7 @@ AppBar buildAppbar() {
         )),
     centerTitle: true,
     title: Text(
-      'ورود',
+      title,
       style: kmediumTextStyle,
     ),
   );
@@ -49,5 +49,46 @@ Widget _loginIcons({required String iconName}) {
       height: 40.w,
       child: Image.asset("icons/$iconName.png"),
     ),
+  );
+}
+
+void showSuccess(String message, BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text("Success!"),
+        content: Text(message),
+        actions: <Widget>[
+          TextButton(
+            child: const Text("OK"),
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, 'MainPage', (route) => false);
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void showError(String errorMessage, BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text("Error!"),
+        content: Text(errorMessage),
+        actions: <Widget>[
+          TextButton(
+            child: const Text("OK"),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
   );
 }
