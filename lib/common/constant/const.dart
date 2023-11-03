@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 import 'package:shopping_app/common/services/storage_service.dart';
 
+//////////////// UI CONSTANTS ///////////////
 const kBgColor = Color(0xffffffff);
 const kBottomColor = Color(0xff284b63);
 const kFirstColor = Color(0xffd9d9d9);
@@ -20,16 +21,31 @@ TextStyle kmediumTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
   fontFamily: 'yekan',
 );
+
+const CrossAxisAlignment RcrossAxisAlignment = CrossAxisAlignment.end;
+const CrossAxisAlignment LcrossAxisAlignment = CrossAxisAlignment.start;
+const MainAxisAlignment RmainAxisAlignment = MainAxisAlignment.end;
+const MainAxisAlignment LmainAxisAlignment = MainAxisAlignment.start;
+
+
+
+////////////////////// SERVICES CONSTANTS  ////////////////////////////
 const _keyApplicationId = '9AJHEJVLMQRGuWBT24C1meVCYLmK2ghQG2RyUFdI';
 const _keyClientKey = '3RiiFBRDjmdcHPzMfd9ORxQSorW0Ak7YcFOB56rv';
 const _keyParseServerUrl = 'https://parseapi.back4app.com';
+late final StorageService storageService;
+const storageDeviceOpenFirstTime = 'app_first_open';
+const storageUserTokenkey = 'user_token_key';
+const storageProfilekey = 'user_profile_key';
 
-Future<void> init() async {
+/////////////////////  FUNCTIONS CONSTANTS ////////////////////////////
+
+Future init() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Parse().initialize(_keyApplicationId, _keyParseServerUrl,
       clientKey: _keyClientKey, autoSendSessionId: true);
-  await StorageService().init();
+  storageService = await StorageService().init();
 
   // await Firebase.initializeApp();
 }

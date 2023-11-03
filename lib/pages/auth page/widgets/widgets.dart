@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../constant/const.dart';
+import '../../../common/constant/const.dart';
 
 AppBar buildAppbar(String title) {
   return AppBar(

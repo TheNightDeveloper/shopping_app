@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/pages/main_pages/home_screen/home_screen.dart';
 
 Widget buildScreen(int index) {
   List<Widget> _widgets = [
-    Center(
-      child: Text('home page'),
-    ),
+    HomeScreen(),
     Center(
       child: Text('search page'),
     ),

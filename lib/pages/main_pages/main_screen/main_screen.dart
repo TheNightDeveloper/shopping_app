@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shopping_app/constant/const.dart';
-import 'package:shopping_app/pages/main_pages/bloc/main_bloc.dart';
-import 'package:shopping_app/pages/main_pages/widgets/main_screens_widgets.dart';
+import 'package:shopping_app/common/constant/const.dart';
+import 'package:shopping_app/pages/main_pages/main_screen/bloc/main_bloc.dart';
+import 'package:shopping_app/pages/main_pages/main_screen/widgets/main_screens_widgets.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

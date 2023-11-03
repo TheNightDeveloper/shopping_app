@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:shopping_app/constant/const.dart';
+import 'package:shopping_app/common/constant/const.dart';
 import 'package:shopping_app/pages/auth%20page/auth_controller.dart';
 import 'package:shopping_app/pages/auth%20page/bloc/auth_bloc.dart';
 import 'package:shopping_app/pages/auth%20page/bloc/auth_event.dart';
@@ -30,7 +30,7 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: RcrossAxisAlignment,
                 children: [
                   const SizedBox(
                     height: 30,
@@ -47,7 +47,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Container(
                     margin: EdgeInsets.only(top: 65.h),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      crossAxisAlignment: RcrossAxisAlignment,
                       children: [
                         Text('نام کاربری',
                             style: kmediumTextStyle.copyWith(

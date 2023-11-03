@@ -7,7 +7,7 @@ import 'package:shopping_app/pages/auth%20page/bloc/auth_event.dart';
 import 'package:shopping_app/pages/auth%20page/bloc/auth_state.dart';
 import 'package:shopping_app/pages/auth%20page/widgets/widgets.dart';
 
-import '../../constant/const.dart';
+import '../../common/constant/const.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: RcrossAxisAlignment,
                 children: [
                   thirdPartyLogin(context),
                   Center(
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     margin: EdgeInsets.only(top: 65.h),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      crossAxisAlignment: RcrossAxisAlignment,
                       children: [
                         Text('ایمیل',
                             style: kmediumTextStyle.copyWith(
@@ -61,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                             showCursor: false,
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
+                              
                               enabledBorder: OutlineInputBorder(
                                   borderSide:
                                       const BorderSide(color: kFirstColor),

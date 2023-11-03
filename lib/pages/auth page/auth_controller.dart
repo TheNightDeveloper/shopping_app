@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
-import 'package:shopping_app/constant/const.dart';
+import 'package:shopping_app/common/constant/const.dart';
 
 import 'bloc/auth_bloc.dart';
 import 'widgets/widgets.dart';
@@ -97,28 +97,30 @@ class AuthController {
   }
 
   void b4aLogin() async {
-    // try {
+    try {
       final state = context.read<AuthBloc>().state;
       String emailAddress = state.email;
       String password = state.password;
 
       if (emailAddress.isNotEmpty && password.isNotEmpty) {
-        // try {
-          final user = ParseUser(emailAddress, password,emailAddress);
+        try {
+          final user = ParseUser(emailAddress, password, emailAddress);
           var response = await user.login();
-          
+
           if (response.success) {
+            print(user.sessionToken);
+            storageService.setString(storageUserTokenkey, user.sessionToken!);
             showSuccess("User was successfully login!", context);
           } else {
             showError(response.error!.message, context);
           }
-        // } catch (e) {
-        //   print(e);
-        // }
+        } catch (e) {
+          print(e);
+        }
       }
-    // } catch (e) {
-    //   print(e);
-    // }
+    } catch (e) {
+      print(e);
+    }
   }
 
   void signUpHandler() async {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../constant/const.dart';
+import '../../common/constant/const.dart';
 import 'bloc/welcome_bloc.dart';
 import 'bloc/welcome_event.dart';
 import 'bloc/welcome_state.dart';
@@ -149,10 +149,8 @@ class _page extends StatelessWidget {
                     duration: const Duration(milliseconds: 1500),
                     curve: Curves.fastEaseInToSlowEaseOut);
               } else {
-                /*Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => const LoginPage()));*/
+
+                storageService.setBool(storageDeviceOpenFirstTime, false);
                 Navigator.pushNamedAndRemoveUntil(
                     context, 'LoginPage', (route) => false);
               }
